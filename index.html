@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function computerPlay(){
+            items = ["ROCK","PAPER","SCISSOR"];
+            return items[Math.floor(Math.random()*items.length)];
+        }
+        function playerPlay(){
+           return window.prompt().toUpperCase();
+        }
+        // const playerSelection = playerPlay();
+        // const computerSelection = computerPlay();
+        function playRound(playerSelection, computerSelection){
+            console.log("You selected: " + playerSelection + "\nComputer selected: " + computerSelection);
+            if(playerSelection == computerSelection){
+                console.log("You and Computer selected same thing");
+            }        
+            else if(playerSelection == "ROCK" && computerSelection == "SCISSOR"){
+                console.log("You Win! Rock beats Scissor");
+            }
+            else if(playerSelection == "ROCK" && computerSelection == "PAPER"){
+                console.log("You Lose! Paper beats Rock");
+            }
+            else if(playerSelection == "PAPER" && computerSelection == "ROCK"){
+                console.log("You Win! Paper beats Rock");
+            }
+            else if(playerSelection == "PAPER" && computerSelection == "SCISSOR"){
+                console.log("You Lose! Scissor beats Paper");
+            }
+            else if(playerSelection == "SCISSOR" && computerSelection == "PAPER"){
+                console.log("You Win! Scissor beats Paper");
+            }
+            else if(playerSelection == "SCISSOR" && computerSelection == "ROCK"){
+                console.log("You Lose! Rock beats Scissor");
+            }
+        }
+        playRound(playerPlay(),computerPlay());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
